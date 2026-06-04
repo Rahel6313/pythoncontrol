@@ -21,6 +21,7 @@ cls = "spec_remote"
 srvr = "192.168.10.20"
 port = 29958
 timeout_s = 60.0
+#This is not yet the correct one. have to find out the correct connection
 
 # Excitation Polarizer
 [excPol]
