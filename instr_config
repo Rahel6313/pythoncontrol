@@ -1,0 +1,50 @@
+########################################################
+### Instrument configurations
+########################################################
+# define the base configurations for the instrument classes
+# Use to avoid hardcoding instrument configurations in the code!!!!
+# think about it: do you prefer to modify a COM port adress once here, or correct bugs for the rest of your life for all instruments?
+
+# Steinacher 8 channels DAC
+[HRDAC]
+cls = "HRDAC"
+port = "COM1"
+timeout_s = 1.0
+baudrate=115200
+validate_on_init = true
+
+
+# Princeton Instruments spectrometer via remote UDP server
+# MATLAB reference uses PI_spec_remote('192.168.10.20', 29958)
+[spectrometer]
+cls = "spec_remote"
+srvr = "192.168.10.20"
+port = 29958
+timeout_s = 60.0
+
+# Excitation Polarizer
+[excPol]
+cls = "excPol"
+port = "COM6"
+timeout_s = 1.0
+baudrate=115200
+bytesize=8
+stopbits=1
+validate_on_init = true
+
+# Collection Polarizer
+[colPol]
+cls = "colPol"
+port = "COM4"
+timeout_s = 1.0
+baudrate=115200
+bytesize=8
+stopbits=1
+validate_on_init = true
+
+# AMATEK Signal Recovery LIA 7270
+[LockInAmplifier]
+cls = "lockin"
+srvr = "169.154.175.150"
+port = 50000
+timeout_s = 3
